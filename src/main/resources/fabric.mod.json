@@ -1,20 +1,21 @@
 
 {
   "schemaVersion": 1,
-  "id": "ultra_performance",
+  "id": "ultra-performance",
   "version": "0.2.0",
   "name": "Ultra Performance",
-  "description": "Lekki mod wydajnosciowy dla Minecraft Java 1.19.4.",
-  "authors": ["UltraPerformance"],
-  "license": "MIT",
+  "description": "Experimental performance controls for Minecraft 1.19.4.",
   "environment": "client",
   "entrypoints": {
     "client": [
       "pl.ultraperformance.UltraPerformanceClient"
     ]
   },
+  "mixins": [
+    "ultraperformance.mixins.json"
+  ],
   "depends": {
-    "fabricloader": ">=0.14.0",
+    "fabricloader": ">=0.15.0",
     "minecraft": "1.19.4",
     "java": ">=17",
     "fabric-api": "*"
