@@ -1,0 +1,13 @@
+
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "pl.ultraperformance.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "GameOptionsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
