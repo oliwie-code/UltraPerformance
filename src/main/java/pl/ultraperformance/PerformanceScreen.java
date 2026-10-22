@@ -83,15 +83,16 @@ public class PerformanceScreen extends Screen {
         float delta
     ) {
         this.renderBackground(matrices);
-        this.drawCenteredText(
+
+        this.textRenderer.draw(
             matrices,
-            this.textRenderer,
             this.title,
-            this.width / 2,
-            this.height / 4 - 30,
+            this.width / 2.0F
+                - this.textRenderer.getWidth(this.title) / 2.0F,
+            this.height / 4.0F - 30,
             0xFFFFFF
         );
+
         super.render(matrices, mouseX, mouseY, delta);
     }
 }
-
