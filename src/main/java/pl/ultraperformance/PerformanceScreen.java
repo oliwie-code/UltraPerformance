@@ -17,9 +17,12 @@ public class PerformanceScreen extends Screen {
 
     @Override
     protected void init() {
-        selectedViewDistance = this.client.options.getViewDistance();
+        selectedViewDistance =
+            this.client.options.getViewDistance().getValue();
+
         minimalParticles =
-            this.client.options.getParticles() == ParticlesMode.MINIMAL;
+            this.client.options.getParticles().getValue()
+                == ParticlesMode.MINIMAL;
 
         int centerX = this.width / 2;
         int y = this.height / 4;
@@ -28,10 +31,12 @@ public class PerformanceScreen extends Screen {
             ButtonWidget.builder(viewDistanceLabel(), button -> {
                 selectedViewDistance =
                     selectedViewDistance >= 12
-                    ? 2
-                    : selectedViewDistance + 2;
+                        ? 2
+                        : selectedViewDistance + 2;
 
-                this.client.options.setViewDistance(selectedViewDistance);
+                this.client.options.getViewDistance()
+                    .setValue(selectedViewDistance);
+
                 button.setMessage(viewDistanceLabel());
             }).dimensions(centerX - 100, y, 200, 20).build()
         );
@@ -40,10 +45,10 @@ public class PerformanceScreen extends Screen {
             ButtonWidget.builder(particlesLabel(), button -> {
                 minimalParticles = !minimalParticles;
 
-                this.client.options.setParticles(
+                this.client.options.getParticles().setValue(
                     minimalParticles
-                    ? ParticlesMode.MINIMAL
-                    : ParticlesMode.ALL
+                        ? ParticlesMode.MINIMAL
+                        : ParticlesMode.ALL
                 );
 
                 button.setMessage(particlesLabel());
@@ -66,7 +71,7 @@ public class PerformanceScreen extends Screen {
     private Text particlesLabel() {
         return Text.literal(
             "Cząsteczki: " +
-            (minimalParticles ? "Minimalne" : "Wszystkie")
+                (minimalParticles ? "Minimalne" : "Wszystkie")
         );
     }
 
@@ -78,7 +83,7 @@ public class PerformanceScreen extends Screen {
         float delta
     ) {
         this.renderBackground(matrices);
-        drawCenteredText(
+        this.drawCenteredText(
             matrices,
             this.textRenderer,
             this.title,
@@ -89,3 +94,4 @@ public class PerformanceScreen extends Screen {
         super.render(matrices, mouseX, mouseY, delta);
     }
 }
+
