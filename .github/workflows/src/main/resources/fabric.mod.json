@@ -1,0 +1,22 @@
+
+{
+  "schemaVersion": 1,
+  "id": "ultra_performance",
+  "version": "${version}",
+  "name": "Ultra Performance",
+  "description": "Lekki mod wydajnosciowy dla Minecraft Java 1.19.4.",
+  "authors": ["UltraPerformance"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "pl.ultraperformance.UltraPerformanceClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": "1.19.4",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}
