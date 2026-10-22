@@ -2,7 +2,7 @@
 {
   "schemaVersion": 1,
   "id": "ultra_performance",
-  "version": "${version}",
+  "version": "0.2.0",
   "name": "Ultra Performance",
   "description": "Lekki mod wydajnosciowy dla Minecraft Java 1.19.4.",
   "authors": ["UltraPerformance"],
